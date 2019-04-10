@@ -9,7 +9,7 @@ jobs:
 
       - run:
           name: Update system
-          command: apt-get install -y update
+          command: apt-get -y update
 
       - run:
           name: Install g++
