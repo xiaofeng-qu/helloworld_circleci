@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ubuntu:latest
+
+    steps:
+      - checkout
+
+      - run:
+          name: Update system
+          command: apt-get install -y update
+
+      - run:
+          name: Install g++
+          command: apt-get install -y g++
+
+      - run:
+          name: Compile the source code
+          command: g++ -o helloworld helloworld.cpp
+
+      - run:
+          name: Run the hello world program
+          command: ./helloworld
